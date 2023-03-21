@@ -40,6 +40,7 @@ namespace PowerAccent.Core
         SR,
         SV,
         TK,
+        HI
     }
 
     internal class Languages
@@ -78,6 +79,7 @@ namespace PowerAccent.Core
                 Language.SR => GetDefaultLetterKeySR(letter), // Serbian
                 Language.SV => GetDefaultLetterKeySV(letter), // Swedish
                 Language.TK => GetDefaultLetterKeyTK(letter), // Turkish
+                Language.HI => GetDefaultLetterKeyHI(letter), // Hindi
                 _ => throw new ArgumentException("The language {0} is not know in this context", lang.ToString()),
             };
         }
@@ -615,6 +617,40 @@ namespace PowerAccent.Core
                 LetterKey.VK_Z => new string[] { "ž" },
                 _ => Array.Empty<string>(),
             };
+        }
+
+        //Hindi
+        private static string[] GetDefaultLetterKeyHI(LetterKey letter)
+        {
+            return letter SwitchToLaunchPage
+            {
+                LetterKey.VK_A => new string[] { "अ","आ"," ा" },
+                LetterKey.VK_B => new string[] { "ब", "भ" },
+                LetterKey.VK_C => new string[] { "च", "छ" },
+                LetterKey.VK_D => new string[] { "ड", "ढ", "द", "ध"},
+                LetterKey.VK_E => new string[] { "इ", "ई" },
+                LetterKey.VK_F => new string[] { "" },
+                LetterKey.VK_G => new string[] { "ğ", "ģ", "ǧ", "ġ", "ĝ", "ǥ", "γ" },
+                LetterKey.VK_H => new string[] { "ḣ", "ĥ", "ħ" },
+                LetterKey.VK_I => new string[] { "ï", "î", "í", "ì", "ī", "į", "ı", "İ", "ι", "ǐ" },
+                LetterKey.VK_J => new string[] { "ĵ" },
+                LetterKey.VK_K => new string[] { "क"},
+                LetterKey.VK_L => new string[] { "ĺ", "ľ", "ļ", "ł", "₺", "λ" },
+                LetterKey.VK_M => new string[] { "ṁ", "μ" },
+                LetterKey.VK_N => new string[] { "न","ण"},
+                LetterKey.VK_O => new string[] { "ô", "ó", "ö", "ő", "ò", "ō", "ȯ", "ø", "õ", "œ", "ω", "ο", "ǒ" },
+                LetterKey.VK_P => new string[] { "ṗ", "₽", "π", "φ", "ψ" },
+                LetterKey.VK_R => new string[] { "ŕ", "ř", "ṙ", "₹", "ρ" },
+                LetterKey.VK_S => new string[] { "ś", "ş", "š", "ș", "ṡ", "ŝ", "ß", "σ", "$" },
+                LetterKey.VK_T => new string[] { "ţ", "ť", "ț", "ṫ", "ŧ", "θ", "τ", "þ" },
+                LetterKey.VK_U => new string[] { "û", "ú", "ü", "ŭ", "ű", "ù", "ů", "ū", "ų", "ǔ", "υ", "ǖ", "ǘ", "ǚ", "ǜ" },
+                LetterKey.VK_W => new string[] { "ẇ", "ŵ", "₩" },
+                LetterKey.VK_X => new string[] { "ẋ", "ξ" },
+                LetterKey.VK_Y => new string[] { "ÿ", "ŷ", "ý", "ẏ" },
+                LetterKey.VK_Z => new string[] { "ź", "ž", "ż", "ʒ", "ǯ", "ζ" },
+                LetterKey.VK_COMMA => new string[] { "¿", "¡", "∙", "₋", "⁻", "–", "≤", "≥", "≠", "≈", "≙", "±", "₊", "⁺" },
+                LetterKey.VK_PERIOD => new string[] { "\u0300", "\u0301", "\u0302", "\u0303", "\u0304", "\u0308", "\u030C" },
+            }
         }
     }
 }
